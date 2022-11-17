@@ -1,0 +1,31 @@
+.test {
+    background-color: aqua;
+}
+
+.test1:after {
+    content: 'hibangga';
+	position: absolute;
+    width: 100vw;
+    height: 100px;
+	background-color: red;
+
+	-webkit-animation: slide-loading1 5s 0s forwards;
+    animation: slide-loading1 5s 0s forwards;
+}
+
+@-webkit-keyframes slide-loading1 {
+    0%{width: 0; left: 0;}
+    100%{width: 100%; left: 0; font-size: 48px;}
+}
+
+@keyframes slide-loading1 {
+    0%{
+        width: 0;
+        left: 0;
+    }
+    100%{
+        width: 100%;
+        left: 0;
+        font-size: 48px;
+    }
+}

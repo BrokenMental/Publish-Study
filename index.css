@@ -1,0 +1,83 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:300);
+
+body {
+	background-color: black;
+    margin: 0;
+    height: 100vh;
+
+	font-family:  Lato,"Helvetica Neue" ;
+}
+
+.slide-loading1 {
+	content: "LOADING ...";
+	position: absolute;
+	background-color: #fff;
+	width: 100vw;
+	height: 100px;
+	bottom: 0;
+	left: 0;
+
+	-webkit-animation: slide-loading1 5s 0s forwards;
+    animation: slide-loading1 5s 0s forwards;
+}
+
+.slide-loading2 {
+	position: absolute;
+	background-color: #fff;
+	width: 100vw;
+	height: 0;
+	bottom: 0;
+	left: 0;
+
+	-webkit-animation: slide-loading2 1s 5s forwards;
+    animation: slide-loading2 1s 5s forwards;
+}
+
+.slide-loading3 {
+	position: absolute;
+	width: 0;
+	left: 0;
+    bottom: 20vh;
+    color:white;
+
+    font-size:0;
+
+	-webkit-animation: slide-loading3 5s 7s forwards;
+    animation: slide-loading3 5s 7s forwards;
+}
+
+.slide-loading3>p {
+	position: relative;
+	/* background-color: black; */
+    margin:0;
+}
+
+@-webkit-keyframes slide-loading1 {
+    0%{width: 0; left: 0;}
+    100%{width: 100%; left: 0;}
+}
+
+@keyframes slide-loading1 {
+    0%{width: 0; left: 0;}
+    100%{width: 100%; left: 0;}
+}
+
+@-webkit-keyframes slide-loading2 {
+    0%{height: 0; bottom: 0;}
+    100%{height: 100%; bottom: 0;}
+}
+
+@keyframes slide-loading2 {
+    0%{height: 0; bottom: 0;}
+    100%{height: 100%; bottom: 0;}
+}
+
+@-webkit-keyframes slide-loading3 {
+    0%{width: 0; left: 0;}
+    100%{width: 100%; left: 0; font-size:48px; color:black;}
+}
+
+@keyframes slide-loading3 {
+    0%{width: 0; left: 0;}
+    100%{width: 100%; left: 0; font-size:48px; color: black;}
+}
