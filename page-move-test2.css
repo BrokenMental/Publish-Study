@@ -1,0 +1,14 @@
+#loader {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: blueviolet;
+    transition: transform 2s 0s;
+    /* pointer-events: none; */
+}
+
+body:not(.hidden).reveal #loader {
+    transform: translateX(-100%);
+}

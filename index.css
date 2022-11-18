@@ -5,6 +5,36 @@ body {
     margin: 0;
 
 	font-family:  Lato,"Helvetica Neue" ;
+    overflow: hidden;
+}
+
+#page-standard {
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    gap: 0;
+
+    height: 100vh;
+    width: 100vw;
+}
+
+.page2 {
+    position: fixed;
+    top: 0;
+    left: 100vw;
+    width: 100vw;
+    height: 100vh;
+    background: blueviolet;
+}
+
+.page-trans-left {
+    transition: transform 2s 0s;
+    transform: translateX(-100vw);
+}
+
+.page-trans-right {
+    transition: transform 2s 0s;
+    transform: translateX(0);
 }
 
 .trans-title {
@@ -20,13 +50,13 @@ body {
 	font-size: 24px;
 	font-weight: bold;
 
-    -webkit-animation: change-text-color-white-black 1s 7s infinite;
-    animation: change-text-color-white-black 1s 7s infinite;
+    -webkit-animation: change-text-color-white-black 1s 6s infinite;
+    animation: change-text-color-white-black 1s 6s infinite;
 }
 
 .trans-title:after {
 	z-index: inherit;
-    content: 'study';
+    content: '';
 
 	font-weight: 600;
 
@@ -59,14 +89,20 @@ body {
     animation: slide-loading2 1s 5s forwards;
 }
 
-.slide-loading3 {
+.page1 {
 	position: absolute;
-	width: 0;
+    height: 100vh;
+	width: 100vw;
 	left: 0;
-    bottom: 5vh;
+    bottom: 0;
 	
-	-webkit-animation: slide-loading3 5s 7s forwards;
-    animation: slide-loading3 5s 7s forwards;
+	-webkit-animation: page1 5s 7s forwards;
+    animation: page1 5s 7s forwards;
+}
+
+.page-fotter {
+    position: absolute;
+    bottom:5vh;
 }
 
 .slide-loading-text {
@@ -80,7 +116,8 @@ body {
 	transition: all 0.1s;
 }
 
-.slide-loading-text:hover {
+.slide-loading-text:hover,
+.slide-loading-text:focus {
     font-size:120px;
 }
 
@@ -104,14 +141,14 @@ body {
     100%{height: 100%; bottom: 0;}
 }
 
-@-webkit-keyframes slide-loading3 {
+@-webkit-keyframes page1 {
     0%{width: 0;}
-    100%{width: 100%;}
+    100%{width: 100vw;}
 }
 
-@keyframes slide-loading3 {
+@keyframes page1 {
     0%{width: 0;}
-    100%{width: 100%;}
+    100%{width: 100vw;}
 }
 
 @-webkit-keyframes change-title-text {

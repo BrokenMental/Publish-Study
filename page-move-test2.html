@@ -1,0 +1,26 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="./page-move-test2.css">
+</head>
+
+<body class="reveal">
+    <div id="loader">
+        <span onclick="location.href='page-move-test1.html'">PAGE1</span>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            window.setTimeout(() => {
+                document.body.classList.add("reveal");
+                document.body.classList.toggle("reveal");
+            }, 1000);
+            document.addEventListener("click", () => {
+                document.body.classList.remove("reveal");
+            });
+        });
+
+    </script>
+</body>
+
+</html>

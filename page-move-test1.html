@@ -1,0 +1,21 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="./page-move-test1.css">
+</head>
+
+<body class="fade">
+    <div>
+        <span onclick="location.href='page-move-test2.html'">PAGE2</span>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            window.setTimeout(() => {
+                document.body.classList.remove('fade');
+            });
+        });
+    </script>
+</body>
+
+</html>

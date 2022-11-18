@@ -1,0 +1,13 @@
+body {
+    opacity: 1;
+    transition: opacity 1s;
+}
+
+body.fade {
+    opacity: 0;
+}
+
+div {
+    font-size: 100px;
+    font-weight: bold;
+}

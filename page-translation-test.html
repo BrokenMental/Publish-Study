@@ -1,0 +1,73 @@
+<html>
+
+<head>
+    <style>
+        body {
+            margin:0;
+            display: flex;
+            flex-direction: row;
+            gap:0;
+            overflow: hidden;
+        }
+
+        .box {
+            font-size: 48px;
+            color: white;
+        }
+
+        .box1, .box2 {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            background: blueviolet;
+        }
+
+        .box2 {
+            position: absolute;
+            top:0;
+            left:100vw;
+        }
+        
+        .box-trans-left {
+            transition: transform 2s 0s;
+            transform: translateX(-100%);
+        }
+        
+        .box-trans-right {
+            transition: transform 2s 0s;
+            transform: translateX(0);
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div class="box1">
+        <div class="box">
+            <span onclick="move(1);">NEXT</span>
+        </div>
+    </div>
+    <div class="box2">
+        <div class="box">
+            <span onclick="move(0);">PREVIOUS</span>
+        </div>
+    </div>
+
+    <script>
+        const move = (flg) => {
+            if(flg) {
+                document.querySelector('.box1').classList.toggle("box-trans-left");
+                document.querySelector('.box2').classList.toggle("box-trans-left");
+                document.querySelector('.box1').classList.remove("box-trans-right");
+                document.querySelector('.box2').classList.remove("box-trans-right");
+            }else {
+                document.querySelector('.box1').classList.toggle("box-trans-left");
+                document.querySelector('.box2').classList.toggle("box-trans-left");
+                document.querySelector('.box1').classList.add("box-trans-right");
+                document.querySelector('.box2').classList.add("box-trans-right");
+            }
+        }
+    </script>
+</body>
+
+</html>

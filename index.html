@@ -6,15 +6,33 @@
         <span class="trans-title">99</span>
 		<div class="slide-loading1"></div>
         <div class="slide-loading2"></div>
-        <div>
-            <div class="slide-loading3">
-                <p class="slide-loading-text">abcd1</p>
-                <p class="slide-loading-text">abcd2</p>
-                <p class="slide-loading-text">abcd3</p>
+        <div id="page-standard">
+            <div class="page1">
+                <div class="page-fotter">
+                    <span class="slide-loading-text" onclick="move(1);">NEXT</span>
+                    <p class="slide-loading-text">abcd1</p>
+                    <p class="slide-loading-text">abcd2</p>
+                    <p class="slide-loading-text">abcd3</p>
+                </div>
+            </div>
+            <div class="page2">
+                <span class="slide-loading-text" onclick="move(0);">PREVIOUS</span>
             </div>
         </div>
         <script>
-
+            const move = (flg) => {
+                if(flg) {
+                    document.querySelector('.page1').classList.toggle("page-trans-left");
+                    document.querySelector('.page2').classList.toggle("page-trans-left");
+                    document.querySelector('.page1').classList.remove("page-trans-right");
+                    document.querySelector('.page2').classList.remove("page-trans-right");
+                }else {
+                    document.querySelector('.page1').classList.toggle("page-trans-left");
+                    document.querySelector('.page2').classList.toggle("page-trans-left");
+                    document.querySelector('.page1').classList.add("page-trans-right");
+                    document.querySelector('.page2').classList.add("page-trans-right");
+                }
+            }
         </script>
     </body>
 </html>
