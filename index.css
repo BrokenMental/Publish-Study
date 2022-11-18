@@ -3,9 +3,35 @@
 body {
 	background-color: black;
     margin: 0;
-    height: 100vh;
 
 	font-family:  Lato,"Helvetica Neue" ;
+}
+
+.trans-title {
+	z-index: 1;
+	position: absolute;
+	top: 5vh;
+	left: 5vw;
+	width: 100px;
+	height: 60px;
+
+	color:white;
+
+	font-size: 24px;
+	font-weight: bold;
+
+    -webkit-animation: change-text-color-white-black 1s 7s infinite;
+    animation: change-text-color-white-black 1s 7s infinite;
+}
+
+.trans-title:after {
+	z-index: inherit;
+    content: 'study';
+
+	font-weight: 600;
+
+    -webkit-animation: change-title-text 4s 5s infinite;
+    animation: change-title-text 4s 5s infinite;
 }
 
 .slide-loading1 {
@@ -13,7 +39,7 @@ body {
 	position: absolute;
 	background-color: #fff;
 	width: 100vw;
-	height: 100px;
+	height: 20px;
 	bottom: 0;
 	left: 0;
 
@@ -37,19 +63,25 @@ body {
 	position: absolute;
 	width: 0;
 	left: 0;
-    bottom: 20vh;
-    color:white;
-
-    font-size:0;
-
+    bottom: 5vh;
+	
 	-webkit-animation: slide-loading3 5s 7s forwards;
     animation: slide-loading3 5s 7s forwards;
 }
 
-.slide-loading3>p {
+.slide-loading-text {
 	position: relative;
-	/* background-color: black; */
     margin:0;
+	padding-left: 5vw;
+
+    font-size:100px;
+	cursor: pointer;
+
+	transition: all 0.1s;
+}
+
+.slide-loading-text:hover {
+    font-size:120px;
 }
 
 @-webkit-keyframes slide-loading1 {
@@ -73,11 +105,40 @@ body {
 }
 
 @-webkit-keyframes slide-loading3 {
-    0%{width: 0; left: 0;}
-    100%{width: 100%; left: 0; font-size:48px; color:black;}
+    0%{width: 0;}
+    100%{width: 100%;}
 }
 
 @keyframes slide-loading3 {
-    0%{width: 0; left: 0;}
-    100%{width: 100%; left: 0; font-size:48px; color: black;}
+    0%{width: 0;}
+    100%{width: 100%;}
 }
+
+@-webkit-keyframes change-title-text {
+    0%{content: 'study'; color: black;}
+    33%{content: 'space'; color: black;}
+    66%{content: 'study'; color: black;}
+    100%{content: 'space'; color: black;}
+}
+
+@keyframes change-title-text {
+    0%{content: 'study'; color: black;}
+    33%{content: 'space'; color: black;}
+    66%{content: 'study'; color: black;}
+    100%{content: 'space'; color: black;}
+}
+
+@-webkit-keyframes change-text-color-white-black {
+    0%{color: black;}
+    33%{color: black;}
+    66%{color: black;}
+    100%{color: black;}
+}
+
+@keyframes change-text-color-white-black {
+    0%{color: black;}
+    33%{color: black;}
+    66%{color: black;}
+    100%{color: black;}
+}
+

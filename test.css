@@ -13,19 +13,38 @@
     animation: slide-loading1 5s 0s forwards;
 }
 
+.test-title {
+    width: 100px;
+    height: 80px;
+}
+
+.test-title:after {
+    content: 'study';
+
+    -webkit-animation: change-title-text 4s 0s infinite;
+    animation: change-title-text 4s 0s infinite;
+}
+
 @-webkit-keyframes slide-loading1 {
     0%{width: 0; left: 0;}
     100%{width: 100%; left: 0; font-size: 48px;}
 }
 
 @keyframes slide-loading1 {
-    0%{
-        width: 0;
-        left: 0;
-    }
-    100%{
-        width: 100%;
-        left: 0;
-        font-size: 48px;
-    }
+    0%{width: 0; left: 0;}
+    100%{width: 100%; left: 0; font-size: 48px;}
+}
+
+@-webkit-keyframes change-title-text {
+    0%{content: 'study';}
+    33%{content: 'space';}
+    66%{content: 'study';}
+    100%{content: 'space';}
+}
+
+@keyframes change-title-text {
+    0%{content: 'study';}
+    33%{content: 'space';}
+    66%{content: 'study';}
+    100%{content: 'space';}
 }
