@@ -5,6 +5,11 @@ document.addEventListener("DOMContentLoaded", () => {
         btnPage1Next.onclick = (e) => {
             movePage(2);
         };
+
+		const transTitle = document.getElementById("trans-title");
+        transTitle.onclick = (e) => {
+            movePage(1);
+        };
     }, 5000);
 });
 

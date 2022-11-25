@@ -95,13 +95,14 @@ body {
     animation: change-title-text 5s 0s infinite;
 }
 
-.trans-title {
+#trans-title {
     z-index: 1;
     position: fixed;
     top: 1vh;
     left: 4vw;
     width: 100px;
     max-height: 30px;
+    cursor: pointer;
 
     color: white;
 
@@ -112,7 +113,7 @@ body {
     animation: fade-in-animation 1s 5s forwards;
 }
 
-.trans-title:after {
+#trans-title:after {
     z-index: inherit;
     content: '';
 
