@@ -1,11 +1,10 @@
-@import url(https://fonts.googleapis.com/css?family=Lato:300);
-
 html,
 body {
+    font-family: 'Tenada';
+    
 	background-color: white;
     margin: 0;
 
-	font-family:  Lato,"Helvetica Neue" ;
     overflow: hidden;
 
     height: 100vh;
@@ -40,6 +39,7 @@ body {
 }
 
 #page3 {
+    font-family: 'GangwonEduPowerExtraBold';
     background: white;
 }
 
@@ -66,8 +66,8 @@ body {
 .trans-title {
     z-index: 1;
     position: fixed;
-    top: 2vh;
-    left: 5vw;
+    top: 1vh;
+    left: 4vw;
     width: 100px;
     max-height: 30px;
 
@@ -129,8 +129,7 @@ body {
     margin: 0;
     padding-left: 5vw;
 
-    font-size: 450%;
-    font-weight: 900;
+    font-size: 400%;
     line-height: 90%;
 
     cursor: pointer;
@@ -140,7 +139,7 @@ body {
 
 .menu-text:hover,
 .menu-text:focus {
-    font-size: 480%;
+    font-size: 420%;
     color:yellow;
 }
 
@@ -185,17 +184,17 @@ body {
 }
 
 @-webkit-keyframes change-title-text {
-    0%{content: 'study'; color: white;}
-    20%{content: 'space'; color: white;}
-    50%{content: 'study'; color: white;}
-    70%{content: 'space'; color: white;}
-    100%{content: 'study'; color: white;}
+    0%{content: '99STUDY'; color: white; text-shadow: 1px 1px 1px black;}
+    20%{content: '99SPACE'; color: white; text-shadow: 1px 1px 1px black;}
+    50%{content: '99STUDY'; color: white; text-shadow: 1px 1px 1px black;}
+    70%{content: '99SPACE'; color: white; text-shadow: 1px 1px 1px black;}
+    100%{content: '99STUDY'; color: white; text-shadow: 1px 1px 1px black;}
 }
 
 @keyframes change-title-text {
-    0%{content: 'study'; color: white;}
-    20%{content: 'space'; color: white;}
-    50%{content: 'study'; color: white;}
-    70%{content: 'space'; color: white;}
-    100%{content: 'study'; color: white;}
+    0%{content: '99STUDY'; color: white; text-shadow: 1px 1px 1px black;}
+    20%{content: '99SPACE'; color: white; text-shadow: 1px 1px 1px black;}
+    50%{content: '99STUDY'; color: white; text-shadow: 1px 1px 1px black;}
+    70%{content: '99SPACE'; color: white; text-shadow: 1px 1px 1px black;}
+    100%{content: '99STUDY'; color: white; text-shadow: 1px 1px 1px black;}
 }
