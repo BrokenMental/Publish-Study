@@ -9,29 +9,29 @@
         <span class="trans-title">99</span>
 		<div class="slide-loading1"></div>
         <div class="slide-loading2"></div>
-        <div id="page-standard">
-            <div class="page1">
+        <div id="page-standard" class="moveToPage1">
+            <div id="page1" class="page-standard">
                 <div class="page-fotter">
-                    <span class="slide-loading-text main-text" id="btn-page1-next">NEXT</span>
-                    <p class="slide-loading-text main-text">abcd1</p>
-                    <p class="slide-loading-text main-text">abcd2</p>
-                    <p class="slide-loading-text main-text">abcd3</p>
+                    <span class="menu-text color-white" id="btn-page1-next">NEXT</span>
+                    <p class="menu-text color-white">abcd1</p>
+                    <p class="menu-text color-white">abcd2</p>
+                    <p class="menu-text color-white">abcd3</p>
                 </div>
             </div>
-            <div class="page2">
+            <div id="page2" class="page-standard">
                 <div class="page-body">
-                    <span class="slide-loading-text" onclick="move(1, 0);">PREVIOUS</span>
-                    <p class="slide-loading-text sub-text">abcd1</p>
-                    <p class="slide-loading-text sub-text">abcd2</p>
-                    <p class="slide-loading-text sub-text">abcd3</p>
+                    <span class="menu-text color-white" onclick="movePage(1);">PREVIOUS</span>
+                    <p class="menu-text color-white" onclick="movePage(3);">NEXT</p>
+                    <p class="menu-text color-white">abcd2</p>
+                    <p class="menu-text color-white">abcd3</p>
                 </div>
             </div>
-            <div class="page3">
+            <div id="page3" class="page-standard">
                 <div class="page-body">
-                    <span class="slide-loading-text" onclick="move(2, 0);">PREVIOUS</span>
-                    <p class="slide-loading-text sub-text">abcd1</p>
-                    <p class="slide-loading-text sub-text">abcd2</p>
-                    <p class="slide-loading-text sub-text">abcd3</p>
+                    <span class="menu-text" onclick="movePage(2);">PREVIOUS</span>
+                    <p class="menu-text">abcd1</p>
+                    <p class="menu-text">abcd2</p>
+                    <p class="menu-text">abcd3</p>
                 </div>
             </div>
         </div>
@@ -41,61 +41,14 @@
                     //시작 후 로딩이 완료되는 5초 뒤에 클릭 이벤트 추가
                     const btnPage1Next = document.getElementById('btn-page1-next');
                     btnPage1Next.onclick = e => {
-                        move(0, 1);
+                        movePage(2);
                     }
                 }, 5000);
             });
 
-            //flg : 0 좌측 이동 / 1 우측 이동
-            const move = (page, flg) => {
-                if(page === 0) {
-                    if(flg) {
-                        document.querySelector('.page1').classList.toggle("page-trans-left");
-                        document.querySelector('.page2').classList.toggle("page-trans-left");
-                        document.querySelector('.page1').classList.remove("page-trans-right");
-                        document.querySelector('.page2').classList.remove("page-trans-right");
-
-                        document.querySelector('.page2').classList.toggle("page-chg-left");
-                        document.querySelector('.page2').classList.remove("page-chg-right");
-
-                        document.querySelectorAll('.main-text').forEach(selector => {
-                            selector.classList.toggle("chg-small-text");
-                            selector.classList.remove("chg-big-text");
-                        });
-                    }else {
-
-                    }
-                }else if(page === 1) {
-                    if(flg) {
-
-                    }else {
-                        document.querySelector('.page1').classList.toggle("page-trans-left");
-                        document.querySelector('.page2').classList.toggle("page-trans-left");
-                        document.querySelector('.page1').classList.add("page-trans-right");
-                        document.querySelector('.page2').classList.add("page-trans-right");
-
-                        document.querySelector('.page2').classList.toggle("page-chg-left");
-                        document.querySelector('.page2').classList.add("page-chg-right");
-
-                        document.querySelectorAll('.main-text').forEach(selector => {
-                            selector.classList.toggle("chg-small-text");
-                            selector.classList.toggle("chg-big-text");
-                        });
-                    }
-                }else if(page === 2) {
-                    document.querySelector('.page1').classList.toggle("page-trans-left");
-                    document.querySelector('.page2').classList.toggle("page-trans-left");
-                    document.querySelector('.page1').classList.add("page-trans-right");
-                    document.querySelector('.page2').classList.add("page-trans-right");
-
-                    document.querySelector('.page2').classList.toggle("page-chg-left");
-                    document.querySelector('.page2').classList.add("page-chg-right");
-
-                    document.querySelectorAll('.main-text').forEach(selector => {
-                        selector.classList.toggle("chg-small-text");
-                        selector.classList.toggle("chg-big-text");
-                    });
-                }
+            //page : 몇 페이지로 이동할 것인지 알려주는 숫자
+            const movePage = (page) => {
+                document.getElementById('page-standard').className = 'moveToPage'+page;
             }
         </script>
     </body>

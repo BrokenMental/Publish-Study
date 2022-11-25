@@ -13,6 +13,7 @@ body {
 }
 
 #page-standard {
+    position: fixed;
     margin: 0;
     display: grid;
     grid-template-columns: auto auto auto;
@@ -20,178 +21,137 @@ body {
 
     height: 100vh;
     width: 100vw;
+
+    opacity: 0;
+
+    -webkit-animation: fade-in-animation 1s 5s forwards;
+    animation: fade-in-animation 1s 5s forwards;
 }
 
-.page2 {
-    position: fixed;
-    top: 0;
-    right: -100vw;
+.page-standard {
+    position: relative;
     width: 100vw;
     height: 100vh;
+}
+
+#page1,
+#page2 {
     background: black;
 }
 
-.page3 {
+#page3 {
+    background: white;
+}
+
+.page-body {
     position: fixed;
-    top: 0;
-    right: -200vw;
-    width: 100vw;
-    height: 100vh;
-    background: black;
+    top: 10vh;
 }
 
-.page-trans-left {
-
-}
-
-.page-chg-left {
-    -webkit-animation: page-chg-left 1s 0s forwards;
-    animation: page-chg-left 1s 0s forwards;
-}
-
-@-webkit-keyframes page-chg-left {
-    0%{right: -100vw;}
-    100%{right: -15vw;}
-}
-
-@keyframes page-chg-left {
-    0%{right: -100vw;}
-    100%{right: -15vw;}
-}
-
-.page-chg-right {
-    -webkit-animation: page-chg-right 1s 0s forwards;
-    animation: page-chg-right 1s 0s forwards;
-}
-
-@-webkit-keyframes page-chg-right {
-    0%{right: -15vw;}
-    100%{right: -100vw;}
-}
-
-@keyframes page-chg-right {
-    0%{right: -15vw;}
-    100%{right: -100vw;}
-}
-
-.page-trans-right {
-    transition: transform 1s 0s;
+.moveToPage1 {
+    transition: transform 0.5s 0s;
     transform: translateX(0);
 }
 
-.chg-small-text {
-    -webkit-animation: chg-small-text 1s 0s forwards;
-    animation: chg-small-text 1s 0s forwards;
+.moveToPage2 {
+    transition: transform 0.5s 0s;
+    transform: translateX(-100vw);
 }
 
-@-webkit-keyframes chg-small-text {
-    0%{font-size: 100px;}
-    100%{font-size: 42px;}
-}
-
-@keyframes chg-small-text {
-    0%{font-size: 100px;}
-    100%{font-size: 42px;}
-}
-
-.chg-big-text {
-    -webkit-animation: chg-big-text 1s 0s forwards;
-    animation: chg-big-text 1s 0s forwards;
-}
-
-@-webkit-keyframes chg-big-text {
-    0%{font-size: 42px;}
-    100%{font-size: 100px;}
-}
-
-@keyframes chg-big-text {
-    0%{font-size: 42px;}
-    100%{font-size: 100px;}
+.moveToPage3 {
+    transition: transform 0.5s 0s;
+    transform: translateX(-200vw);
 }
 
 .trans-title {
-	z-index: 1;
-	position: fixed;
-	top: 5vh;
-	left: 5vw;
-	width: 100px;
-	height: 60px;
+    z-index: 1;
+    position: fixed;
+    top: 2vh;
+    left: 5vw;
+    width: 100px;
+    max-height: 30px;
 
-	color:black;
+    color: white;
 
-	font-size: 24px;
-	font-weight: bold;
+    font-size: 24px;
+    font-weight: bold;
 
-    -webkit-animation: change-text-color-black-white 1s 6s infinite;
-    animation: change-text-color-black-white 1s 6s infinite;
+    -webkit-animation: fade-in-animation 1s 5s forwards;
+    animation: fade-in-animation 1s 5s forwards;
 }
 
 .trans-title:after {
-	z-index: inherit;
+    z-index: inherit;
     content: '';
 
-	font-weight: 600;
+    font-weight: 600;
 
-    -webkit-animation: change-title-text 4s 5s infinite;
-    animation: change-title-text 4s 5s infinite;
+    -webkit-animation: change-title-text 10s 5s infinite;
+    animation: change-title-text 10s 5s infinite;
 }
 
 .slide-loading1 {
-	content: "LOADING ...";
-	position: fixed;
-	background-color: black;
-	width: 100vw;
-	height: 20px;
-	bottom: 0;
-	left: 0;
+    content: "LOADING ...";
+    position: fixed;
+    background-color: black;
+    width: 100vw;
+    height: 20px;
+    bottom: 0;
+    left: 0;
 
-	-webkit-animation: slide-loading1 5s 0s forwards;
+    -webkit-animation: slide-loading1 5s 0s forwards;
     animation: slide-loading1 5s 0s forwards;
 }
 
 .slide-loading2 {
-	position: fixed;
-	background-color: black;
-	width: 100vw;
-	height: 0;
-	bottom: 0;
-	left: 0;
-
-	-webkit-animation: slide-loading2 1s 5s forwards;
-    animation: slide-loading2 1s 5s forwards;
-}
-
-.page1 {
-	position: fixed;
-    height: 100vh;
-	width: 100vw;
-	left: 0;
+    position: fixed;
+    background-color: white;
+    width: 100vw;
+    height: 0;
     bottom: 0;
-	
-	-webkit-animation: page1 5s 7s forwards;
-    animation: page1 5s 7s forwards;
+    left: 0;
+
+    -webkit-animation: slide-loading2 1s 5s forwards;
+    animation: slide-loading2 1s 5s forwards;
 }
 
 .page-fotter {
     position: fixed;
-    bottom:5vh;
+    bottom: 5vh;
 }
 
-.slide-loading-text {
-	position: relative;
-    margin:0;
-	padding-left: 5vw;
-
-    font-size:100px;
-	cursor: pointer;
-
-	transition: all 0.1s;
-    color : white;
+.color-white {
+    color: white;
 }
 
-.slide-loading-text:hover,
-.slide-loading-text:focus {
-    font-size:120px;
+.menu-text {
+    position: relative;
+    margin: 0;
+    padding-left: 5vw;
+
+    font-size: 450%;
+    font-weight: 900;
+    line-height: 90%;
+
+    cursor: pointer;
+
+    transition: all 0.1s;
+}
+
+.menu-text:hover,
+.menu-text:focus {
+    font-size: 480%;
+    color:yellow;
+}
+
+@-webkit-keyframes fade-in-animation {
+    0%{opacity: 0;}
+    100%{opacity: 100%;}
+}
+
+@keyframes fade-in-animation {
+    0%{opacity: 0;}
+    100%{opacity: 100%;}
 }
 
 @-webkit-keyframes slide-loading1 {
@@ -206,12 +166,12 @@ body {
 
 @-webkit-keyframes slide-loading2 {
     0%{height: 0; bottom: 0;}
-    100%{height: 100%; bottom: 0;}
+    100%{height: 100%; bottom: 0; background-color: black;}
 }
 
 @keyframes slide-loading2 {
     0%{height: 0; bottom: 0;}
-    100%{height: 100%; bottom: 0;}
+    100%{height: 100%; bottom: 0; background-color: black;}
 }
 
 @-webkit-keyframes page1 {
@@ -226,159 +186,16 @@ body {
 
 @-webkit-keyframes change-title-text {
     0%{content: 'study'; color: white;}
-    33%{content: 'space'; color: white;}
-    66%{content: 'study'; color: white;}
-    100%{content: 'space'; color: white;}
+    20%{content: 'space'; color: white;}
+    50%{content: 'study'; color: white;}
+    70%{content: 'space'; color: white;}
+    100%{content: 'study'; color: white;}
 }
 
 @keyframes change-title-text {
     0%{content: 'study'; color: white;}
-    33%{content: 'space'; color: white;}
-    66%{content: 'study'; color: white;}
-    100%{content: 'space'; color: white;}
-}
-
-@-webkit-keyframes change-text-color-black-white {
-    0%{color: white;}
-    33%{color: white;}
-    66%{color: white;}
-    100%{color: white;}
-}
-
-@keyframes change-text-color-black-white {
-    0%{color: white;}
-    33%{color: white;}
-    66%{color: white;}
-    100%{color: white;}
-}
-
-
-@media(max-width:768px) {
-    #page-standard {
-        margin: 0;
-        display: grid;
-        grid-template-columns: auto auto;
-        gap: 0;
-
-        height: 100vh;
-        width: 100vw;
-    }
-
-    .page2 {
-        position: fixed;
-        top: 0;
-        right: -100vw;
-        width: 100vw;
-        height: 100vh;
-        background: black;
-    }
-
-    .page-body {
-        position: fixed;
-        top:10vh;
-    }
-
-    .page-trans-left {
-        transition: transform 2s 0s;
-        transform: translateX(-100vw);
-    }
-
-    .page-trans-right {
-        transition: transform 2s 0s;
-        transform: translateX(0vw);
-    }
-
-    .trans-title {
-        z-index: 1;
-        position: fixed;
-        top: 2vh;
-        left: 5vw;
-        width: 100px;
-        max-height: 30px;
-
-        color:black;
-
-        font-size: 24px;
-        font-weight: bold;
-
-        -webkit-animation: change-text-color-black-white 1s 6s infinite;
-        animation: change-text-color-black-white 1s 6s infinite;
-    }
-
-    .trans-title:after {
-        z-index: inherit;
-        content: '';
-
-        font-weight: 600;
-
-        -webkit-animation: change-title-text 4s 5s infinite;
-        animation: change-title-text 4s 5s infinite;
-    }
-
-    .slide-loading1 {
-        content: "LOADING ...";
-        position: fixed;
-        background-color: black;
-        width: 100vw;
-        height: 20px;
-        bottom: 0;
-        left: 0;
-
-        -webkit-animation: slide-loading1 5s 0s forwards;
-        animation: slide-loading1 5s 0s forwards;
-    }
-
-    .slide-loading2 {
-        position: fixed;
-        background-color: black;
-        width: 100vw;
-        height: 0;
-        bottom: 0;
-        left: 0;
-
-        -webkit-animation: slide-loading2 1s 5s forwards;
-        animation: slide-loading2 1s 5s forwards;
-    }
-
-    .page1 {
-        position: fixed;
-        height: 100vh;
-        width: 100vw;
-        left: 0;
-        bottom: 0;
-        
-        -webkit-animation: page1 5s 7s forwards;
-        animation: page1 5s 7s forwards;
-    }
-
-    .page-fotter {
-        position: fixed;
-        bottom:5vh;
-    }
-
-    .slide-loading-text {
-        position: relative;
-        margin:0;
-        padding-left: 5vw;
-
-        font-size:20px;
-        cursor: pointer;
-
-        transition: all 0.1s;
-        color : white;
-    }
-
-    .slide-loading-text:hover,
-    .slide-loading-text:focus {
-        font-size:30px;
-    }
-
-    .page-chg-left,
-    .page-chg-right,
-    .chg-small-text,
-    .chg-big-text {
-        -webkit-animation: none;
-        animation: none;
-    }
-    
+    20%{content: 'space'; color: white;}
+    50%{content: 'study'; color: white;}
+    70%{content: 'space'; color: white;}
+    100%{content: 'study'; color: white;}
 }
