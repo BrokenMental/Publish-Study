@@ -44,8 +44,17 @@ body {
 }
 
 .page-body {
-    position: fixed;
-    top: 10vh;
+    position: absolute;
+    overflow-y: auto;
+    top: 6vh;
+
+    height: 90vh;
+    padding: 8px;
+}
+
+.page-fotter {
+    position: absolute;
+    bottom: 5vh;
 }
 
 .moveToPage1 {
@@ -85,7 +94,6 @@ body {
     -webkit-animation: change-title-text 5s 0s infinite;
     animation: change-title-text 5s 0s infinite;
 }
-
 
 .trans-title {
     z-index: 1;
@@ -139,11 +147,6 @@ body {
     animation: slide-loading2 1s 5s forwards;
 }
 
-.page-fotter {
-    position: fixed;
-    bottom: 5vh;
-}
-
 .color-white {
     color: white;
 }
@@ -162,18 +165,18 @@ body {
     animation: cursor-pointer 1s 5s forwards;
 }
 
+.menu-text:hover,
+.menu-text:focus {
+    font-size: 420%;
+    color:yellow;
+}
+
 @-webkit-keyframes cursor-pointer {
     100%{cursor: pointer;}
 }
 
 @keyframes cursor-pointer {
     100%{cursor: pointer;}
-}
-
-.menu-text:hover,
-.menu-text:focus {
-    font-size: 420%;
-    color:yellow;
 }
 
 @-webkit-keyframes fade-in-animation {
