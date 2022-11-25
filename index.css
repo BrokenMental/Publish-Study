@@ -63,6 +63,30 @@ body {
     transform: translateX(-200vw);
 }
 
+.loading-title {
+    z-index: 1;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    color: black;
+
+    font-size: 68px;
+    font-weight: 900;
+}
+
+.loading-title:after {
+    z-index: inherit;
+    content: '';
+
+    font-weight: 900;
+
+    -webkit-animation: change-title-text 5s 0s infinite;
+    animation: change-title-text 5s 0s infinite;
+}
+
+
 .trans-title {
     z-index: 1;
     position: fixed;
@@ -74,7 +98,7 @@ body {
     color: white;
 
     font-size: 24px;
-    font-weight: bold;
+    font-weight: 900;
 
     -webkit-animation: fade-in-animation 1s 5s forwards;
     animation: fade-in-animation 1s 5s forwards;
@@ -86,8 +110,8 @@ body {
 
     font-weight: 600;
 
-    -webkit-animation: change-title-text 10s 5s infinite;
-    animation: change-title-text 10s 5s infinite;
+    -webkit-animation: change-title-text-white 10s 5s infinite;
+    animation: change-title-text-white 10s 5s infinite;
 }
 
 .slide-loading1 {
@@ -132,9 +156,18 @@ body {
     font-size: 400%;
     line-height: 90%;
 
-    cursor: pointer;
+    cursor: context-menu;
 
-    transition: all 0.1s;
+    -webkit-animation: cursor-pointer 1s 5s forwards;
+    animation: cursor-pointer 1s 5s forwards;
+}
+
+@-webkit-keyframes cursor-pointer {
+    100%{cursor: pointer;}
+}
+
+@keyframes cursor-pointer {
+    100%{cursor: pointer;}
 }
 
 .menu-text:hover,
@@ -155,22 +188,26 @@ body {
 
 @-webkit-keyframes slide-loading1 {
     0%{width: 0; left: 0;}
-    100%{width: 100%; left: 0;}
+    99%{width: 100%; left: 0;}
+    100%{display:none;}
 }
 
 @keyframes slide-loading1 {
     0%{width: 0; left: 0;}
-    100%{width: 100%; left: 0;}
+    99%{width: 100%; left: 0;}
+    100%{display:none;}
 }
 
 @-webkit-keyframes slide-loading2 {
     0%{height: 0; bottom: 0;}
-    100%{height: 100%; bottom: 0; background-color: black;}
+    99%{height: 100%; bottom: 0; background-color: black;}
+    100%{display:none;}
 }
 
 @keyframes slide-loading2 {
     0%{height: 0; bottom: 0;}
-    100%{height: 100%; bottom: 0; background-color: black;}
+    99%{height: 100%; bottom: 0; background-color: black;}
+    100%{display:none;}
 }
 
 @-webkit-keyframes page1 {
@@ -184,6 +221,22 @@ body {
 }
 
 @-webkit-keyframes change-title-text {
+    0%{content: '99STUDY'; text-shadow: 1px 1px 1px}
+    20%{content: '99SPACE'; text-shadow: 1px 1px 1px}
+    50%{content: '99STUDY'; text-shadow: 1px 1px 1px}
+    70%{content: '99SPACE'; text-shadow: 1px 1px 1px}
+    100%{content: '99STUDY'; text-shadow: 1px 1px 1px}
+}
+
+@keyframes change-title-text {
+    0%{content: '99STUDY'; text-shadow: 1px 1px 1px}
+    20%{content: '99SPACE'; text-shadow: 1px 1px 1px}
+    50%{content: '99STUDY'; text-shadow: 1px 1px 1px}
+    70%{content: '99SPACE'; text-shadow: 1px 1px 1px}
+    100%{content: '99STUDY'; text-shadow: 1px 1px 1px}
+}
+
+@-webkit-keyframes change-title-text-white {
     0%{content: '99STUDY'; color: white; text-shadow: 1px 1px 1px black;}
     20%{content: '99SPACE'; color: white; text-shadow: 1px 1px 1px black;}
     50%{content: '99STUDY'; color: white; text-shadow: 1px 1px 1px black;}
@@ -191,7 +244,7 @@ body {
     100%{content: '99STUDY'; color: white; text-shadow: 1px 1px 1px black;}
 }
 
-@keyframes change-title-text {
+@keyframes change-title-text-white {
     0%{content: '99STUDY'; color: white; text-shadow: 1px 1px 1px black;}
     20%{content: '99SPACE'; color: white; text-shadow: 1px 1px 1px black;}
     50%{content: '99STUDY'; color: white; text-shadow: 1px 1px 1px black;}
